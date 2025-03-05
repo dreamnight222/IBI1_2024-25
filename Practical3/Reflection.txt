@@ -1,0 +1,2 @@
+In the process of doing this practical, I encountered some difficulties and they bothered me for a long time. 
+However, after I solved these problems, I realized that the problems were actually caused by my own stupid mistakes, such as forgetting to save the file, which caused the file in github to not change after uploading.
