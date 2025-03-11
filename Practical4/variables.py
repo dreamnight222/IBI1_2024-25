@@ -16,3 +16,18 @@ f = d + e
 # c = 90 mins, f = 95 mins, so walking + bus is quicker
 print("Bus commute time:", c, "mins")
 print("Car commute time:", f, "mins")
+# Section 4.2: Working with Booleans
+
+# Initialize boolean variables
+X = True
+Y = False
+
+# Create W as the logical AND of X and Y
+W = X and Y
+
+# Truth table for W (X and Y):
+# X = True, Y = True  -> W = True
+# X = True, Y = False -> W = False
+# X = False, Y = True -> W = False
+# X = False, Y = False -> W = False
+print("W =", W)  # Output: False
