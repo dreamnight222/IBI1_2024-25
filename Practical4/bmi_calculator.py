@@ -5,14 +5,14 @@
 # 4. Compare BMI with thresholds (underweight < 18.5, normal 18.5-30, obese > 30)
 # 5. Print the BMI and weight category
 
-# Prompt user for input
-weight = float(input("Enter your weight in kg: "))  # Get weight from user
-height = float(input("Enter your height in meters: "))  # Get height from user
+# 1. Prompt user for input
+weight = float(input("Enter your weight in kg: "))  # 2. Get weight from user
+height = float(input("Enter your height in meters: "))  # 2. Get height from user
 
-# Calculate BMI
+# 3. Calculate BMI
 bmi = weight / (height ** 2)
 
-# Determine weight category
+# 4. Determine weight category
 if bmi < 18.5:
     category = "underweight"
 elif bmi <= 30:
@@ -20,5 +20,5 @@ elif bmi <= 30:
 else:
     category = "obese"
 
-# Print result
+# 5. Print result
 print("Your BMI is " + str(bmi) + ". You are considered " + category + ".")
