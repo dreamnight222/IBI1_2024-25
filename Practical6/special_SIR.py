@@ -27,7 +27,7 @@ for t in range(100):
         for dx in [-1, 0, 1]:
             for dy in [-1, 0, 1]:
                 if dx == 0 and dy == 0:  # skip itself
-                   continue
+                    continue
                 nx, ny = x + dx, y + dy
                 # check if the neighbour is susceptible
                 if 0 <= nx < 100 and 0 <= ny < 100 and population[nx, ny] == 0:
@@ -41,7 +41,9 @@ for t in range(100):
     
     im = plt.imshow(population, cmap='viridis',interpolation='nearest', animated=True)
     plt.title(f'time point{t+1}')
+    # save the current frame to the list
     ims.append([im])
 
+# make an animation
 ani = animation.ArtistAnimation(fig, ims, interval=200, blit=True, repeat=False)
 plt.show()
