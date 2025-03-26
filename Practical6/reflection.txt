@@ -1,0 +1,6 @@
+The content of this exercise has significantly increased compared to previous ones. 
+The difficulty of the first two tasks is acceptable, but the third requires the use of other tools. 
+For me, I used Grok and deepseek to help me achieve the goal of having the third task output a full animation to simulate the process of disease transmission in a population over time. 
+Since I did not know how to generate animations, I sought help from AI and learned to understand the code they provided. 
+There is another issue in this practice: the guide mentions copying the code from task 1 into task 2 and then completing task 2 based on task 1. 
+However, in my actual practice, I found that there is a significant difference in the logic between task 2 and task 1, and only a small part of the code in task 1 can be directly used in task 2.
