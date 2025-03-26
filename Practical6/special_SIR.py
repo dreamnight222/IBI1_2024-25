@@ -47,3 +47,4 @@ for t in range(100):
 # make an animation
 ani = animation.ArtistAnimation(fig, ims, interval=200, blit=True, repeat=False)
 plt.show()
+# All the codes related to the animation is from Grok3.
