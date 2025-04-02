@@ -3,7 +3,7 @@ import re
 
 # define a function to count the number of TATA boxes
 def has_tata_box(sequence):
-    return len(re.findall(r'TATA[AT][AT]', sequence))  
+    return len(re.findall(r'TATA[AT]A[AT]', sequence))  
 
 # define a function to check if the sequence has splice_combo
 def is_spliced(sequence, splice_combo):
