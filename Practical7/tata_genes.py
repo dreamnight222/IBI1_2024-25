@@ -17,7 +17,7 @@ with open(input_file, 'r') as infile, open(output_file, 'w') as outfile:
         if line.startswith('>'):
             # save the previous sequence
             if current_seq and has_tata_box(current_seq): # check whether the current_seq is not empty and the sequence have the TATA box
-                gene_name = line.split()[0][1:].split('_')[0]  # get the gene name，remove '>' and '_mRNA'
+                gene_name = current_name.split()[0][1:].split('_')[0]  # get the gene name，remove '>' and '_mRNA'
                 outfile.write(f'>{gene_name}\n{current_seq}\n') # write the information in the outfile
             current_name = line
             current_seq = ''
