@@ -3,7 +3,7 @@ import re
 
 # define a function to check if the sequence has tataboxes
 def has_tata_box(sequence):
-    return bool(re.search(r'TATA[AT][AT]', sequence))
+    return bool(re.search(r'TATA[AT]A[AT]', sequence))
 
 # read the input file and output a new file
 input_file = 'Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa'
