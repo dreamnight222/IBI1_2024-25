@@ -1,4 +1,4 @@
-# spliced_tata_genes.py
+# import necessary libraries
 import re
 
 # define a function to count the number of TATA boxes
