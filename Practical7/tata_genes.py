@@ -1,10 +1,11 @@
 # import necessary libraries
 import re
 
+# define a function to check if the sequence has tataboxes
 def has_tata_box(sequence):
     return bool(re.search(r'TATA[AT][AT]', sequence))
 
-# read the input file and process it
+# read the input file and output a new file
 input_file = 'Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa'
 output_file = 'tata_genes.fa'
 
@@ -21,8 +22,8 @@ with open(input_file, 'r') as infile, open(output_file, 'w') as outfile:
             current_name = line
             current_seq = ''
         else:
-            current_seq += line
-    # process the last sequence
+            current_seq += line# go for next line
+    # process the last sequence just like those above
     if current_seq and has_tata_box(current_seq):
         gene_name = current_name.split()[0][1:]
         outfile.write(f'>{gene_name}\n{current_seq}\n')
