@@ -5,6 +5,7 @@ import re
 def has_tata_box(sequence):
     return len(re.findall(r'TATA[AT][AT]', sequence))  
 
+# define a function to check if the sequence has splice_combo
 def is_spliced(sequence, splice_combo):
     return bool(re.search(splice_combo, sequence))
 
@@ -22,17 +23,18 @@ with open(input_file, 'r') as infile, open(output_file, 'w') as outfile:
         line = line.strip()
         if line.startswith('>'):
             if current_seq:
-                if is_spliced(current_seq, splice_combo):
-                    tata_count = has_tata_box(current_seq)
+                if is_spliced(current_seq, splice_combo):# check if it has splice_comnbo
+                    tata_count = has_tata_box(current_seq)# calculate the number of tata boxes(see if it has tata boxes)
                     if tata_count > 0:
                         gene_name = line.split()[0][1:].split('_')[0] 
                         output_line = '>' + gene_name + '_TATA' + str(tata_count) + '\n' + current_seq.replace('\n', '') + '\n'
                         outfile.write(output_line)
             current_name = line
+            # reset the current_seq
             current_seq = ''
         else:
-            current_seq += line
-    # process the last sequence
+            current_seq += line# go for next line
+    # process the last sequence just like those above
     if current_seq:
         if is_spliced(current_seq, splice_combo):
             tata_count = has_tata_box(current_seq)
