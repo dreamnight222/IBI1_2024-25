@@ -22,8 +22,9 @@ population = np.zeros((100, 100))
 outbreak = np.random.choice(range(100), 2)
 population[outbreak[0], outbreak[1]] = 1  # 1=infected
 
-fig = plt.figure(figsize=(6,4), dpi=150)
-ims = []
+plt.ion()
+fig, ax = plt.subplots(figsize=(6,4), dpi=150)
+
 # stimulate 100 time points
 for t in range(100):
     # find the infected
@@ -47,13 +48,13 @@ for t in range(100):
         # recovery occurs with gamma probability
         if np.random.random() < gamma:
             population[x, y] = 2  # 2=recovered
-    
-    im = plt.imshow(population, cmap='viridis',interpolation='nearest', animated=True)
-    plt.title(f'time point{t+1}')
-    # save the current frame to the list
-    ims.append([im])
+    ax.clear()
+    ax.imshow(population, cmap='viridis',interpolation='nearest', animated=True)
+    ax.set_title(f'time point{t+1}')
+    plt.pause(0.02)
 
 # make an animation
-ani = animation.ArtistAnimation(fig, ims, interval=200, blit=True, repeat=False)
+plt.ioff()
+plt.title("spatial_SIR")
 plt.show()
 # All the codes related to the animation is from Grok3.
