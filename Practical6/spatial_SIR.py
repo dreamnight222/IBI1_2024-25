@@ -4,8 +4,7 @@
 # 3.choose a infected person randomly 
 # 4.stimulate 100 time point
 # 5.find every infected person and recovered person at each time point
-# 6.save every time point as a frame and save the current frame to the list
-# 7.make an animation to show the process
+# 6.make an animation to show the process
 
 # import necessary libraries
 import numpy as np
@@ -57,4 +56,4 @@ for t in range(100):
 plt.ioff()
 plt.title("spatial_SIR")
 plt.show()
-# All the codes related to the animation is from Grok3.
+# All the codes related to the animation is from Grok3 and Chatgpt.
