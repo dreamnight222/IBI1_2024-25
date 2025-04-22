@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # set working directory
-os.chdir("/cygdrive/c/users/lenovo/IBI1_2024-25/Practical10")
+os.chdir(r"C:\users\lenovo\IBI1_2024-25\Practical10")
 
 # import data
 dalys_data = pd.read_csv("dalys-rate-from-all-causes.csv")
@@ -22,14 +22,14 @@ print("\nDALYs data for 1990")
 print(dalys_1990.head())
 
 # Calculate the average DALYs for the UK and France
-uk_data = dalys_data.loc[dalys_data['Entity'] == "United Kingdom", ["DALYs"]]
-france_data = dalys_data.loc[dalys_data['Entity'] == "France", ["DALYs"]]
-uk_mean = uk_data.mean()
-france_mean = france_data.mean()
+uk_data = dalys_data.loc[dalys_data['Entity'] == "United Kingdom", ["Year","DALYs"]]
+france_data = dalys_data.loc[dalys_data['Entity'] == "France", ["Year","DALYs"]]
+uk_mean = uk_data['DALYs'].mean()
+france_mean = france_data['DALYs'].mean()
 print("\nAverage DALYs")
 print(uk_mean)
 print(france_mean)
-
+#uk_mean is higher than france_mean
 
 # Graph the United Kingdom DALYs over time
 plt.figure(figsize=(10, 6))
