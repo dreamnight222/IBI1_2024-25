@@ -43,3 +43,16 @@ plt.tight_layout()
 plt.savefig('uk_dalys.png')
 plt.show()
 
+#question code
+china_data = dalys_data.loc[dalys_data['Entity'] == "China",["Year","DALYs"]]
+plt.figure(figsize=(10, 6))
+plt.plot(china_data['Year'], china_data['DALYs'], 'r-', label='China')
+plt.plot(uk_data['Year'], uk_data['DALYs'], 'b-', label='United Kingdom')
+plt.xlabel('year')
+plt.ylabel('DALYs')
+plt.title('Comparison of DALYs trends in China and the UK')
+plt.xticks(rotation=45)
+plt.legend()
+plt.tight_layout()
+plt.savefig('china_uk_comparison.png')
+plt.show()
