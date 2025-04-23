@@ -1,0 +1,3 @@
+Q:How does the trend of DALYs change over time?
+question codes starts from line 47
+R:With the passage of time, the mean range of DALYs values in China and the UK decreased, and the difference between DALYs values in China and the UK decreased with time.
