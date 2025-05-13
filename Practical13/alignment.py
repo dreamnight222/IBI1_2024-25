@@ -48,6 +48,6 @@ pairs = [("Human-Mouse", human_seq, mouse_seq),("Human-Random", human_seq, rando
 
 for name, s1, s2 in pairs:
     score, identity = align(s1, s2, blosum)
-    print(f"{name}comparison outcome：")
+    print(f"{name}_comparison outcome：")
     print(f"BLOSUM62 score：{score}")
     print(f"identical percentage：{identity:.2f}%\n")
