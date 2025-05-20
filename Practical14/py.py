@@ -35,19 +35,19 @@ class SAXHandler(xml.sax.ContentHandler):
             'biological_process': {'id': '', 'name': '', 'count': 0},
             'cellular_component': {'id': '', 'name': '', 'count': 0}
         }
-        self.current = {}
+        self.current = None
         self.content = ""
 
     def startElement(self, name, attrs):
         if name == 'term':
             self.current = {'id': '', 'name': '', 'namespace': '', 'is_a': 0}
-        elif name == 'is_a':
+        elif name == 'is_a' and self.current is not None:
             self.current['is_a'] += 1
         self.content = name
 
     def characters(self, data):
         data = data.strip()
-        if not data:
+        if not data or self.current is None:
             return
         if self.content == 'id':
             self.current['id'] += data
@@ -67,7 +67,7 @@ class SAXHandler(xml.sax.ContentHandler):
                         'name': self.current['name'],
                         'count': count
                     })
-            self.current = {}
+            self.current = None
 
 def sax_parse(xml_file):
 # use SAX to parse XML and collect statistics
@@ -82,7 +82,7 @@ def sax_parse(xml_file):
 xml_file = 'go_obo.xml'
 
 # DOM
-dom_results, dom_time = dom_parse(xml_file)
+dom_results, dom_time = dom_parse(xml_file) # obtain the list of maximum values returned by the dom_parse function and the elapsed time
 print("DOM Results:")
 for ns, data in dom_results.items():
     print(f"{ns}: {data['id']} ({data['name']}) - {data['count']} <is_a>")
